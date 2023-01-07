@@ -10,10 +10,4 @@ Welcome to RTD Minimum's documentation!
    notebook
    secondpage
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+~
