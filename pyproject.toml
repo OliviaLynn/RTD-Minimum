@@ -1,7 +1,7 @@
 [project]
 name = "rtd-minimum"
 description = "A minimal RTD repo, with Jupyter notebook support"
-authors = ["Olivia"]
+authors = [{name: "Olivia"}]
 version = "0.1.0"
 readme = "README.rst"
 requires-python = ">=3.8"
