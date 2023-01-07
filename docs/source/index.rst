@@ -6,6 +6,8 @@
 Welcome to RTD Minimum's documentation!
 =======================================
 
+c:
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
