@@ -20,11 +20,12 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
     "nbsphinx",]
+
 source_suffix = [".rst", ".md"]
 
-templates_path = ['_templates']
-exclude_patterns = []
+#templates_path = ['_templates']
 
+exclude_patterns = []
 
 
 # -- Options for HTML output -------------------------------------------------

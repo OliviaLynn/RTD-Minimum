@@ -1,7 +1,7 @@
 Welcome to RTD Minimum's documentation!
 =======================================
 
-c:
+:)
 
 .. toctree::
    :maxdepth: 1
