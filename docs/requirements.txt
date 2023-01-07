@@ -1,0 +1,4 @@
+sphinx
+nbconvert
+ipykernel
+nbsphinx
