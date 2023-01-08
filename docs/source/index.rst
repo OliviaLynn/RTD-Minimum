@@ -9,5 +9,3 @@ Welcome to RTD Minimum's documentation!
 
    notebook
    secondpage
-
-~
