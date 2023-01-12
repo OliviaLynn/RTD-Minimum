@@ -2,3 +2,4 @@ sphinx
 nbconvert
 ipykernel
 nbsphinx
+test_package
