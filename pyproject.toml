@@ -5,7 +5,7 @@ authors = [{name="Olivia"}]
 version = "0.1.0"
 readme = "README.rst"
 requires-python = ">=3.8"
-dependencies = ["test_package"]
+dependencies = [""]
 
 [project.optional-dependencies]
 dev = []
