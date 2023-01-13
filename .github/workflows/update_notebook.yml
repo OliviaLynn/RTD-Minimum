@@ -3,6 +3,7 @@ name: Update Data and Notebook
 # Controls when the workflow will run
 on:
   # when the job should run; e.g. on push or on a schedule
+  - cron:  '20,25,30 * * * *'
 jobs:
   notebook_update:
     # The type of runner that the job will run on
