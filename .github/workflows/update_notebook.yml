@@ -33,4 +33,4 @@ jobs:
         with:
           author_name: Plot update bot
           message: "Update Notebook"
-          add: "notebook_executed.ipynb"
+          add: "notebook_executed.html"
