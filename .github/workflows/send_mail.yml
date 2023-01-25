@@ -24,4 +24,4 @@ jobs:
         # comma-separated string, send email to
         to: oliviarlynn@gmail.com
         # from email name
-        from: John Doe
+        from: Olivia's GitHub
