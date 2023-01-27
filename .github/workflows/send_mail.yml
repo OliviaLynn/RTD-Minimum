@@ -3,7 +3,7 @@ name: Simple send email
 on:
   workflow_dispatch:
 jobs:
-  notebook_update:
+  send_email:
     runs-on: ubuntu-latest
     
     steps:
