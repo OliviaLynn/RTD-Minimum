@@ -22,7 +22,7 @@ jobs:
       - name: Update analysis notebook
         run: |
           python -m pip install jupyter nbconvert nbformat
-          jupyter nbconvert --to html --execute docs/source/notebook.ipynb --output notebook_executed.html
+          jupyter nbconvert --fakeFlagToTriggerFailure --to html --execute docs/source/notebook.ipynb --output notebook_executed.html
       
       - name: Commit updated notebook
         uses: EndBug/add-and-commit@v9
