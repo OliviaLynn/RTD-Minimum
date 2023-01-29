@@ -1,0 +1,25 @@
+name: build-and-report-workflow
+run-name: Build & Report run by ${{ github.actor }}
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '15 * * * *'
+jobs:
+  job-one:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Failing step
+        id: demo
+        run: exit 1
+      - name: Report previous step failure
+        if: ${{ failure() }}
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: Report Failure -> ${{ github.repository }}'s ${{ github.job }} has ${{ job.status }}
+          body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
+          to: olynn@andrew.cmu.edu
+          from: Olivia's GitHub
