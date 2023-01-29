@@ -22,14 +22,14 @@ jobs:
       - name: Update analysis notebook
         run: |
           python -m pip install jupyter nbconvert nbformat
-          jupyter nbconvert --to html --execute docs/source/notebook.ipynb --output notebook_executed.html
+          jupyter nbconvert --to rst --execute docs/source/notebook.ipynb --output notebook_executed.rst
       
       - name: Commit updated notebook
         uses: EndBug/add-and-commit@v9
         with:
           author_name: GitHub-Actions
           message: "Auto rebuild notebook"
-          add: "*.html --force"
+          add: "*.rst --force"
 
       - name: Report failure
         if: ${{ failure() }}
