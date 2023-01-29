@@ -8,10 +8,30 @@ jobs:
   job-one:
     runs-on: ubuntu-latest
     steps:
-      - name: Failing step
-        id: demo
-        run: exit 1
-      - name: Report previous step failure
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip -r docs/requirements.txt
+
+      - name: Update analysis notebook
+        run: |
+          python -m pip install jupyter nbconvert nbformat
+          jupyter nbconvert --to html --execute docs/source/notebook.ipynb --output notebook_executed.html
+      
+      - name: Commit updated notebook
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: GitHub-Actions
+          message: "Auto rebuild notebook"
+          add: "*.html --force"
+
+      - name: Report failure
         if: ${{ failure() }}
         uses: dawidd6/action-send-mail@v3
         with:
@@ -19,7 +39,7 @@ jobs:
           server_port: 465
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: Report Failure -> ${{ github.repository }}'s ${{ github.job }} has ${{ job.status }}
-          body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
+          subject: ${{ github.repository }}'s ${{ github.job }} -> ${{ job.status }}
+          body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has job status '${{ job.status }}'
           to: olynn@andrew.cmu.edu
           from: Olivia's GitHub
