@@ -10,7 +10,8 @@ jobs:
     steps:
       - name: Failing step
         id: demo
-        run: exit 1
+        shell: bash
+        run: echo hello
       - name: Report previous step failure
         if: ${{ failure() }}
         uses: dawidd6/action-send-mail@v3
