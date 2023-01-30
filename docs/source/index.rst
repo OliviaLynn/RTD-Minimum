@@ -9,3 +9,6 @@ Welcome to RTD Minimum's documentation!
 
    notebook
    secondpage
+
+.. raw:: html
+   :file: notebook_executed.html
