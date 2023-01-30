@@ -19,11 +19,14 @@ jobs:
       - name: Install dependencies
         run: python -m pip install --upgrade pip -r docs/requirements.txt
 
+      - name: Get pandoc
+        uses: docker://pandoc/core:2.9
+        
       - name: Update analysis notebook
         run: |
           python -m pip install jupyter nbconvert nbformat
           jupyter nbconvert --to rst --execute docs/source/notebook.ipynb --output notebook_executed.rst
-      
+        
       - name: Commit updated notebook
         uses: EndBug/add-and-commit@v9
         with:
