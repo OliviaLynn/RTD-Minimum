@@ -1,8 +1,8 @@
 name: Update Data and Notebook
 
 on:
-  schedule:
-    - cron:  '55 11 * * *'
+  #schedule:
+  #  - cron:  '55 11 * * *'
   workflow_dispatch:
 jobs:
   notebook_update:
